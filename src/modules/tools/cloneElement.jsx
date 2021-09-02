@@ -1,15 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 
 function FatherComponent({ children }) {
   const newChildren = React.cloneElement(children, { age: 18 });
-  return <div>
-    {newChildren}
-  </div>
+  return <div>{newChildren}</div>;
 }
 
 function SonComponent(props) {
   console.log(props);
-  return <h1>hello, my son!</h1>
+  return <h1>hello, my son!</h1>;
 }
 
 class Index extends React.Component {
@@ -20,7 +18,7 @@ class Index extends React.Component {
           <SonComponent name="lin"></SonComponent>
         </FatherComponent>
       </div>
-    )
+    );
   }
 }
 

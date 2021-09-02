@@ -20,10 +20,6 @@ const Parent = (props) => {
 const NewParent = React.forwardRef((props, ref) => <Parent grandRef={ref}/>);
 
 class GrandParent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   node = null;
   componentDidMount() {
     console.log(this.node);

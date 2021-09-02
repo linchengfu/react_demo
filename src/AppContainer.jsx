@@ -5,6 +5,10 @@ import ForwardRef from './modules/components/forwardRef';
 import Lazy from './modules/components/lazy-suspense';
 import CloneElement from './modules/tools/cloneElement';
 import Children from './modules/tools/Children';
+import UserReducer from './modules/react-hooks/useReducer';
+import ClassRef from "./modules/ref/ClassRef";
+import FunctionRef from "./modules/ref/FunRef";
+import UseImperativeHandle from "./modules/react-hooks/useImperativeHandle"
 
 const Container = () => {
   return (
@@ -15,6 +19,10 @@ const Container = () => {
       <Lazy />
       <CloneElement />
       <Children />
+      <UserReducer />
+      <ClassRef />
+      <FunctionRef />
+      <UseImperativeHandle />
     </div>
   )
 }
