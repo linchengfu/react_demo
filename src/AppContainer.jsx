@@ -10,10 +10,17 @@ import ClassRef from "./modules/ref/ClassRef";
 import FunctionRef from "./modules/ref/FunRef";
 import UseImperativeHandle from "./modules/react-hooks/useImperativeHandle";
 import Compose from "./modules/design-mode/Compose";
+import Demo from "./modules/Test";
 
 const Container = () => {
-  const [obj, setObj] = React.useState([{ a: 2 }]);
+  const [obj, setObj] = React.useState();
+  let arr = [];
+  arr.push({ a: 2 });
+  let arr2 = [];
+  arr2.push({ b: 3 }, { a: 10 });
   console.log(obj);
+
+  const [isShow, setIsShow] = React.useState(true);
   return (
     <div
       style={{
@@ -33,21 +40,30 @@ const Container = () => {
       <ClassRef />
       <FunctionRef /> */}
       <UseImperativeHandle />
+      {isShow ? <Demo /> : null}
       <Compose />
       <div style={{ border: "1px solid black", padding: "20px" }}>
-        {obj.map((item) => {
+        {/* {obj.map((item) => {
           return (
             <p key={Math.random()} style={{ marginTop: "20px" }}>
               {Object.values(item)}
             </p>
           );
-        })}
+        })} */}
         <button
           onClick={() => {
-            setObj([{ a: 3 }, { b: 4 }]);
+            setObj(arr);
+            setIsShow(false);
           }}
         >
           change
+        </button>
+        <button
+          onClick={() => {
+            setObj(arr2);
+          }}
+        >
+          change2
         </button>
       </div>
     </div>
