@@ -11,6 +11,7 @@ import FunctionRef from "./modules/ref/FunRef";
 import UseImperativeHandle from "./modules/react-hooks/useImperativeHandle";
 import Compose from "./modules/design-mode/Compose";
 import Demo from "./modules/Test";
+import UseRef from "./modules/ref/UseRef";
 
 const Container = () => {
   const [obj, setObj] = React.useState();
@@ -39,6 +40,7 @@ const Container = () => {
       <UserReducer />
       <ClassRef />
       <FunctionRef /> */}
+      <UseRef />
       <UseImperativeHandle />
       {isShow ? <Demo /> : null}
       <Compose />
